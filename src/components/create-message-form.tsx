@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { useParams } from "react-router-dom";
-// import { createMessage } from "../http/create-message";
 import { toast } from "sonner";
+import { createMessage } from "../http/create-message";
  
 export function CreateMessageForm() {
   const { roomId } = useParams()
@@ -18,7 +18,7 @@ export function CreateMessageForm() {
     }
 
     try {
-    //  await createMessage({ message, roomId })
+      await createMessage({ message, roomId })
     } catch {
       toast.error('Falha ao enviar pergunta, tente novamente!')
     }

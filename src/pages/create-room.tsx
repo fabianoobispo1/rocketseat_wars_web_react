@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import amaLogo from "../assets/ama-logo.svg";
 import { ArrowRight } from "lucide-react";
+import { toast } from "sonner";
+import { createRoom } from "../http/create-room";
 
 export function CreateRoom() {
   
@@ -13,16 +15,13 @@ export function CreateRoom() {
       return
     }
 
-
-    navigate(`/room/123`)
-
-   /*  try {
+    try {
       const { roomId } = await createRoom({ theme })
 
       navigate(`/room/${roomId}`)
     } catch {
       toast.error('Falha ao criar sala!')
-    } */
+    }
   }
 
 
